@@ -67,15 +67,18 @@
     max-height: 10%;
   }
   #refreshBtn{
-    font-size: 45px;
+    
+  }
+  #refreshBtn img{
+    width: 40px;
     position: fixed;
-    top: 0%;
-    right: 0px;
+    top: 2%;
+    right: 1%;
     z-index: 3;
   }
 </style>
 <body>
-  <span id="refreshBtn" onclick="refresh()">🔄</span>
+  <span id="refreshBtn" onclick="refresh()"><img src="https://media.discordapp.net/attachments/781793511527677963/832133238125494272/unknown.png" alt=""></span>
   <div id="header">
     <font color="white"><h3 align="center">Chat </font><font color="yellow">JS</font></h3>
   </div>
@@ -91,5 +94,10 @@
     <button type="submit">+</button>
   </form>
 </div>
+<script>
+  function refresh(){
+    location.reload();
+  }
+</script>
 </body>
 </html>

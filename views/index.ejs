@@ -11,34 +11,48 @@
 </head>
 <style>
   #roomForm{
-    position: fixed;
-    bottom: 5%;
-    width: 80%;
-    left: 10%;
+    position: relative;
+    left: 5%;
   }
   #roomForm input{
     border-radius: 20px;
     border-color: black;
     width: 80%;
     font-size: 18px;
+    border-color:rgba(240, 248, 255, 0);
   }#roomForm button{
     border-radius: 20px;
     height: 30px;
+    border-color:rgba(240, 248, 255, 0);
+    background-color: white;
   }
   #roomForm input,button{
    display: inline;
   }
+  #botRoom{
+    border-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: black;
+  }
 </style>
 <body>
+
   <div id="room-container">
     <% Object.keys(rooms).forEach(room => { %>
       <div><%= room %></div>
       <a href="/<%= room %>">Join</a>
     <% }) %>
   </div>
+  <div id="botRoom">
   <form action="/room" method="POST" id="roomForm">
     <input name="room" type="text" required>
     <button type="submit">+</button>
   </form>
+</div>
 </body>
 </html>

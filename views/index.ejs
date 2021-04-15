@@ -14,6 +14,12 @@
     position: fixed;
     bottom: 5%;
   }
+  #roomForm input{
+    border-radius: 20px;
+    border-color: black;
+  }#roomForm button{
+    border-radius: 20px;
+  }
 </style>
 <body>
   <div id="room-container">
@@ -24,7 +30,7 @@
   </div>
   <form action="/room" method="POST" id="roomForm">
     <input name="room" type="text" required>
-    <button type="submit">New Room</button>
+    <button type="submit">+</button>
   </form>
 </body>
 </html>

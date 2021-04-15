@@ -15,6 +15,7 @@ if (messageForm != null) {
     appendMessage(`You: ${message}`)
     socket.emit('send-chat-message', roomName, message)
     messageInput.value = ''
+    
   })
 }
 
@@ -27,6 +28,7 @@ socket.on('room-created', room => {
   roomLink.innerText = 'join'
   Nroom.append(roomElement)
   Nroom.append(roomLink)
+  Nroom.className = 'rooms-'
   roomContainer.append(Nroom)
 })
 
@@ -46,4 +48,6 @@ function appendMessage(message) {
   const messageElement = document.createElement('div')
   messageElement.innerText = message
   messageContainer.append(messageElement)
+  messageElement.className = 'txts'
+  messageContainer.scrollTop = messageContainer.scrollHeight;
 }

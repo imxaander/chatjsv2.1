@@ -11,44 +11,70 @@
   <script defer src="socket.io/socket.io.js"></script>
   <script defer src="script.js"></script>
   <style>
-    body {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    #message-container {
-      width: 80%;
-      max-width: 1200px;
-    }
-
-    #message-container div {
-      background-color: #CCC;
-      padding: 5px;
-    }
-
-    #message-container div:nth-child(2n) {
-      background-color: #FFF;
-    }
-
-    #send-container {
-      position: fixed;
-      bottom: 0px;
-      background-color: white;
-      max-width: 1200px;
-      width: 80%;
-      display: flex;
-    }
-
-    #message-input {
-      flex-grow: 1;
-    }
+    #sent-container input,button{
+   display: inline;
+  }
+  #send-container button{
+    border-radius: 20px;
+    height: 30px;
+    border-color:rgba(240, 248, 255, 0);
+    background-color: white;
+  }
+  #send-container input{
+    border-radius: 20px;
+    border-color: black;
+    width: 80%;
+    font-size: 18px;
+    border-color:rgba(240, 248, 255, 0);
+    font-family: monospace;
+  }
+  #send-container{
+    position: relative;
+    left: 2%;
+  }
+  #botMes{
+    border-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: black;
+  }
+  #header{
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-height: 10%;
+  }
+  #message-container{
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    overflow-y: scroll;
+    width: 80%;
+    left: 10%;
+  }
+  .txts{
+    font-family: monospace;
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+  #message-container::-webkit-scrollbar{
+    display: none;
+  }
   </style>
 </head>
 <body>
+  <div id="header">
+    <font color="white"><h3 align="center">Chat </font><font color="yellow">JS</font></h3>
+  </div>
   <div id="message-container"></div>
-  <div>
+  <div id="botMes">
   <form id="send-container">
     <input type="text" id="message-input" required>
     <button type="submit" id="send-button">Send</button>

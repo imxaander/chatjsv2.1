@@ -46,8 +46,6 @@ io.on('connection', socket => {
     getUserRooms(socket).forEach(room => {
       socket.to(room).broadcast.emit('user-disconnected', rooms[room].users[socket.id])
       delete rooms[room].users[socket.id]
-      const roomFull = rooms?.users
-      if (!roomFull) delete rooms[room]
     })
   })
 })

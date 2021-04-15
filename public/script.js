@@ -1,4 +1,4 @@
-const socket = io('https://thawing-brushlands-59793.herokuapp.com')
+const socket = io('http://thawing-brushlands-59793.herokuapp.com/')
 const messageContainer = document.getElementById('message-container')
 const roomContainer = document.getElementById('room-container')
 const messageForm = document.getElementById('send-container')
@@ -18,7 +18,6 @@ if (messageForm != null) {
     
   })
 }
-
 socket.on('room-created', room => {
   const Nroom = document.createElement('div')
   const roomElement = document.createElement('div')
